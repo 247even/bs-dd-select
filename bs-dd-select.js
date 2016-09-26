@@ -3,7 +3,8 @@ var ddSelect = function(evt,cb){
 	var val;
 
 	
-	$('.bs-dd-select li').on('click', function(){
+	$('.bs-dd-select li').on('click', function(e){
+		e.preventDefault();
 		$(this).parent().find('li').removeClass('bs-dd-selected hidden');
 		$(this).addClass('bs-dd-selected hidden');
 	});
