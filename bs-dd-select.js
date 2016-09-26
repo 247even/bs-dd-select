@@ -1,7 +1,7 @@
-var ddSelect = function(cb){
+var ddSelect = function(evt,cb){
 	
 	var val;
-	this.value = val;
+
 	
 	$('.bs-dd-select li').on('click', function(){
 		$(this).parent().find('li').removeClass('bs-dd-selected hidden');
@@ -15,17 +15,17 @@ var ddSelect = function(cb){
 		var txt = sel.find('a').html();
 		$(this).find('button').html(txt+caret);
 		if(cb){
+			//cb(val);
+		}
+		if(evt == 'onselect' && cb){
 			cb(val);
 		}
 	});	
 };
 
-$(function() {
-	//ddSelect();
-});
-
 /*
-ddSelect(function(val){
-  console.log(val);
+ddSelect('onselect', function(val){
+	console.log(val);
 });
 */
+
